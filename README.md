@@ -22,23 +22,23 @@ _**-h**_ :<br />
 Help of the PlaceholdersKit tool which explain all the command line arguments. <br />
 
 _**-verbose**_ :<br />
-List all the Key placeholders scan in all the fullpath files with the desire extensions. <br />
+More output logs. List all the Key placeholders scan in all the fullpath files with the desire extensions. <br />
 _(default "false")_
 
 _**-extensions**_ :<br />
-All desire extension files to scan for placeholders. <br />
+All desire extension files to be scan deeper for searching placeholders. <br />
 _(default "xml,properties,config,txt")_
 
 _**-folders**_ :<br />
-All folders root to scan the define extensions files for placeholders (deep search in all tree folders/recursivity per default). <br />
+All folders root to scan the define extensions files for searching placeholders (deep search in all tree folders/recursivity per default). <br />
 _(default "c:/MyApplicationRoot")_
 
 _**-consulAddress**_ :<br />
-Consul Server Address to search all KV Pairs for feeding our placeholders files in a streaming live process. <br />
+Consul Server Address to search all KV Pairs for feeding our placeholders files in a "on fly/streaming live" process. <br />
 _(default "consul.fboukezzoula.intra:8500")_
 
 _**-consulDataCenter**_ :<br />
-Datacenter in your Consul to use. This property can be blank. <br />
+Use this specific Datacenter label. This property can be blank if you haven't set your Datacenter on Consul. <br />
 _(default "mustach-project")_
 
 _**-consulEndpointEnvironment**_ :<br />
@@ -50,6 +50,11 @@ The PlaceholdersKit tool use the Consul Hashicorp api package. If you need more 
 In most of the cases, our 3 arguments (_**consulAddress, consulDataCenter, consulEndpointEnvironment**_) will be ample enough. 
 
 The full documentation is available on [Godoc](https://godoc.org/github.com/hashicorp/consul/api)
+
+Concerning the argument _**-consulEndpointEnvironment**_, you can use only one or several endpoints. Usually, we will have common KV pairs for all environement like definition of path for hosting your application, for loggings, AD domains names, same SMTP Relay server for sending mails, same network devices etc ... As these KV are the same on all environements, we can create on Consul Server one endpoint called for example common for example that will host all the KV and will be use for all deployment.
+
+
+
 
 <p align="center">
   <img src="ressources/arguments_cmd_line.png" width="1028"/>
