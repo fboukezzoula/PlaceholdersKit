@@ -16,25 +16,34 @@ This program is useful for a Docker multi-environment deployment scenarios (INT,
 
 # What need the PlaceholdersKit tool ?
 
-The arguments for the command line are :
+The command line arguments are :
 
-_**verbose**_ :
-List all the Key placeholders scan in all the fullpath files with the desire extensions ...
+_**-h**_ :<br />
+Help of the PlaceholdersKit tool which explain all the command line arguments ...:<br />
 
-_**extensions**_ :
-All desire extension files to scan for placeholders ...
+_**-verbose**_ :<br />
+List all the Key placeholders scan in all the fullpath files with the desire extensions ...:<br />
+_(default "false")_
 
-_**folders**_ :
-All folders root to scan the define extensions files for placeholders (deep search in all tree folders/recursivity) ...
+_**-extensions**_ :<br />
+All desire extension files to scan for placeholders ...:<br />
 
-_**consulAddress**_ :
-Consul Server Address to search all KV Pairs for feeding our placeholders files in a streaming live process ...
 
-_**consulDataCenter**_ :
-Datacenter in your Consul to use. This property can be blank ...
+_**-folders**_ :<br />
+All folders root to scan the define extensions files for placeholders (deep search in all tree folders/recursivity) ...:<br />
 
-_**consulEndpointEnvironment**_ :
-The URI root path of our Consul KV store to extract all the KV Pairs ...
+
+_**-consulAddress**_ :<br />
+Consul Server Address to search all KV Pairs for feeding our placeholders files in a streaming live process ...:<br />
+_(default "consul.fboukezzoula.intra:8500")_
+
+_**-consulDataCenter**_ :<br />
+Datacenter in your Consul to use. This property can be blank ...:<br />
+_(default "mustach-project")_
+
+_**-consulEndpointEnvironment**_ :<br />
+The URI root path of our Consul KV store to extract all the KV Pairs ...:<br />
+_(default "/dev/")_
 
 
 
