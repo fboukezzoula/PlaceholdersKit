@@ -61,13 +61,13 @@ The full documentation is available on [Godoc](https://godoc.org/github.com/hash
 * On Windows (cmd) :
 
 ```
-placeholders.exe -verbose=true -extensions=xml,config -folders=c:/MyApplicationRoot -consulAddress=consul.fboukezzoula.intra:8500 -consulDataCenter=mustach-project -consulEndpointEnvironment=/dev/
+placeholders.exe -verbose=true -extensions=xml,config -folders=c:/MyApplicationRoot -consulAddress=consul.fboukezzoula.intra:8500 -consulDataCenter=mustach-project -consulEndpointEnvironment=/common,/dev
 ```
 
 * On Linux (shell) :
 
 ```
-placeholders -verbose=true -extensions=xml,config -folders=/home/userapplication/MyApplicationRoot -consulAddress=consul.fboukezzoula.intra:8500 -consulDataCenter=mustach-project -consulEndpointEnvironment=/dev/
+placeholders -verbose=true -extensions=xml,config -folders=/home/userapplication/MyApplicationRoot -consulAddress=consul.fboukezzoula.intra:8500 -consulDataCenter=mustach-project -consulEndpointEnvironment=/common,/dev
 ```
 
 # Examples of using the PlaceholdersKit in Docker ecosystem :
