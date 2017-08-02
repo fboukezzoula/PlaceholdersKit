@@ -10,7 +10,7 @@ This program is useful for a Docker multi-environment deployment scenarios (INT,
 
 * Placeholders are configurable entries in your application that will be set to an actual value at deployment time. This allows the deployment docker image to be environment-independent and thus reusable.
 
-* At deployment time, the placeholders will be resolved from dictionaries (Consul KV store) that are assigned to the target environment.During the run (docker stack deploy, docker-compose up, docker run ... ), we will replace all the placeholders, delimeters with {{...}} , in all our configuration files with the correct value depend on thetarget deployment environment. 
+* At deployment time, the placeholders will be resolved from dictionaries (taken from a Consul KV store) that are assigned to the target environment. During the deployment, "run" (docker stack deploy, docker-compose up, docker run ... ), we will replace all the placeholders, the key names are delimeter by {{...}} per default, in all your configuration files with the correct value _**depend on the target deployment environment**_. 
 
 * These environment values are taken from a Consul KV store during the deployment ("on the fly/live streaming").The primary use case for this PlaceholdersKit tool is to be able to build native Consul-based configuration into your Docker image without needing glue such as environement variables, tempories files, multiple sed command,copy/move files, etc ...
 
