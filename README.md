@@ -2,7 +2,7 @@
 
 Placeholder text until I can flesh this out more. I'll throw the source up on here for a later release (when I'm more happy with it, because it's my first Golang program); only created the Repo this early to host an Alpha release. Thank you for your patience and for your feedbacks ...
 
-This program is useful for a Docker multi-environment deployment scenarios (INT, DEV, UAT, PRE-PROD, PROD environments, etc ...). Of course, it can be use for another type of multi-environment deployment scenarios : Cloud On-Promise, CSP, etc ..
+This program is useful for a Docker multi-environment deployment scenarios (such as INT, DEV, UAT, PRE-PROD, PROD environments, etc ...). Of course, it can be use for another type of multi-environment deployment scenarios : Cloud On-Promise, CSP, etc ..
 
 # Goals and why this tool is useful :
 
@@ -10,7 +10,7 @@ This program is useful for a Docker multi-environment deployment scenarios (INT,
 
 * Placeholders are configurable entries in your application that will be set to an actual value at deployment time. This allows the deployment docker image to be **environment-independent and thus reusable**.
 
-* At deployment time, the placeholders will be resolved from dictionaries (taken from a Consul KV store) that are assigned to the target environment. During the deployment, the goal "run" (docker stack deploy, docker-compose up, docker run ... ) ; we will replace all the placeholders, all the key names which are delimeter by {{...}} per default with their own values (KV Pairs). These replacements in all your configuration files (you define only the extension files sneed to be scan to find the placeholders such as config, properties, xml files ...) will be done with the correct value _**depend on the target deployment environment**_. 
+* At deployment time, the placeholders will be resolved from dictionaries (taken from a Consul KV store) that are assigned to the target environment. During the deployment, that can be assimilated as a "run" goal for Docker ecosystem (docker stack deploy, docker-compose up, docker run ... ), the PlaceholdersKit tool will replace all the placeholders, all the key names which are delimeter by {{...}} per default with their own values (KV Pairs). These replacements in all your configuration files (you have to define only the extension files for beeing scan and finding in their content all the placeholders such as config, properties, xml files ...) will be done with the correct value _**depend on the target deployment environment**_. 
 
 * These environment values are taken from a Consul KV store during the deployment ("on the fly/live streaming"). The primary use case for this PlaceholdersKit tool is to be able to build native Consul-based configuration into your Docker image without needing glue such as environement variables, use tempories files, multiple sed commands, copy/move files, etc ...
 
