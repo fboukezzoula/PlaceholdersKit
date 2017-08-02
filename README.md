@@ -6,7 +6,7 @@ This program is useful for a Docker multi-environment deployment scenarios (INT,
 
 # Goals and why this tool is useful :
 
-* We have exactly the same docker image (same tag) : with the same binaries, application files and configurations files. All these files are already on the target(s) folder(s) of the docker application.
+* We have exactly the same docker image (same tag) : with the same binaries, application files and configurations files (with all the placeholders). All these files are already on the target(s) folder(s) of the docker application.
 
 * Placeholders are configurable entries in your application that will be set to an actual value at deployment time. This allows the deployment docker image to be **environment-independent and thus reusable**.
 
