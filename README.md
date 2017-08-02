@@ -51,7 +51,7 @@ In most of the cases, our 3 arguments (_**consulAddress, consulDataCenter, consu
 
 The full documentation is available on [Godoc](https://godoc.org/github.com/hashicorp/consul/api)
 
-Concerning the argument _**-consulEndpointEnvironment**_, you can use only one or several endpoints. Usually, we will have common KV pairs for all environement like definition of path for hosting your application, for loggings, AD domains names, same SMTP Relay server for sending mails, same network devices etc ... As these KV are the same on all environements, we can create on Consul Server one endpoint called for example common for example that will host all the KV and will be use for all deployment.
+Concerning the argument _**-consulEndpointEnvironment**_, you can use only one or several endpoints. Usually, we will have the same **common KV pairs** for all environement like the root folder path for hosting your application, the root folder and name files for the  logging process, inforamtion about AD domains names, same SMTP Relay server for sending mails, same network devices etc ... As these KV are the same for all environements, we can create on Consul Server one endpoint called for example **common** that will host all these KV information and will be use for all our deployments.
 
 
 
