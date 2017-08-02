@@ -43,7 +43,7 @@ _(default "mustach-project")_
 
 _**-consulEndpointEnvironment**_ :<br />
 The URI root path of our Consul KV store to extract all the KV Pairs. <br />
-_(default "/dev/")_
+_(default "/common/,/dev/")_
 
 The PlaceholdersKit tool use the Consul Hashicorp api package. If you need more arguments for accessing to your Consul infrastructure, you can easily define the standard environment variables (_CONSUL_HTTP_ADDR, CONSUL_HTTP_TOKEN, CONSUL_HTTP_AUTH, CONSUL_HTTP_SSL, CONSUL_CACERT_, etc ...) for creating a new consul client by calling NewClient function with a Config object as argument. We create easily this Config object by calling the DefaultConfig function and change attribues like Address, Scheme, Datacenter, etc ...   
 
