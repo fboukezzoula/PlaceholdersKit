@@ -1,4 +1,4 @@
-# PlaceholdersKit {{ }}
+# PlaceholdersKit {{...}}
 
 Placeholder text until I can flesh this out more. I'll throw the source up on here for a later release (when I'm more happy with it, because it's my first Golang program); only created the Repo this early to host an Alpha release. Thank you for your patience and for your feedbacks ...
 
