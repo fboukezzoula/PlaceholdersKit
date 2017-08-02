@@ -14,6 +14,28 @@ This program is useful for a Docker multi-environment deployment scenarios (INT,
 
 * These environment values are taken from a Consul KV store during the deployment ("on the fly/live streaming"). The primary use case for this PlaceholdersKit tool is to be able to build native Consul-based configuration into your Docker image without needing glue such as environement variables, use tempories files, multiple sed commands, copy/move files, etc ...
 
+# What need the PlaceholdersKit tool ?
+
+The arguments for the command line are :
+
+_**verbose**_ :
+List all the Key placeholders scan in all the fullpath files with the desire extensions ...
+
+_**extensions**_ :
+All desire extension files to scan for placeholders ...
+
+_**folders**_ :
+All folders root to scan the define extensions files for placeholders (deep search in all tree folders/recursivity) ...
+
+_**consulAddress**_ :
+Consul Server Address to search all KV Pairs for feeding our placeholders files in a streaming live process ...
+
+_**consulDataCenter**_ :
+Datacenter in your Consul to use. This property can be blank ...
+
+_**consulEndpointEnvironment**_ :
+The URI root path of our Consul KV store to extract all the KV Pairs ...
+
 
 
 
