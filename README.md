@@ -47,7 +47,7 @@ _(default "/dev/")_
 
 <p align="center">
   <img src="ressources/arguments_cmd_line.png" width="1028"/>
-  <img src="ressources/consul" width="1028"/>
+  <img src="ressources/consul.png" width="1028"/>
  
 </p>
 
