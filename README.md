@@ -1,6 +1,6 @@
 # PlaceholdersKit
 
-Placeholder text until I can flesh this out more. I'll throw the source up on here for a later release (when I'm more happy with it, because it's my first Golang program), only created the Repo this early to host an Alpha release. Thank you for your patience and for your feedbacks ...
+Placeholder text until I can flesh this out more. I'll throw the source up on here for a later release (when I'm more happy with it, because it's my first Golang program); only created the Repo this early to host an Alpha release. Thank you for your patience and for your feedbacks ...
 
 This program is useful for a Docker multi-environment deployment scenarios (INT, DEV, UAT, PRE-PROD, PROD environments, etc ...). Of course, it can be use for another type of multi-environment deployment scenarios : Cloud On-Promise, CSP, etc ..
 
@@ -14,7 +14,7 @@ This program is useful for a Docker multi-environment deployment scenarios (INT,
 
 * These environment values are taken from a Consul KV store during the deployment ("on the fly/live streaming"). The primary use case for this PlaceholdersKit tool is to be able to build native Consul-based configuration into your Docker image without needing glue such as environement variables, use tempories files, multiple sed commands, copy/move files, etc ...
 
-# What need the PlaceholdersKit tool ?
+# What are the command line arguments for this PlaceholdersKit tool ?
 
 The command line arguments are :
 
@@ -30,7 +30,7 @@ All desire extension files to scan for placeholders. <br />
 _(default "xml,properties,config,txt")_
 
 _**-folders**_ :<br />
-All folders root to scan the define extensions files for placeholders (deep search in all tree folders/recursivity). <br />
+All folders root to scan the define extensions files for placeholders (deep search in all tree folders/recursivity per default). <br />
 _(default "c:/MyApplicationRoot")_
 
 _**-consulAddress**_ :<br />
