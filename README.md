@@ -70,4 +70,4 @@ placeholders.exe -verbose=true -extensions=xml,config -folders=c:/MyApplicationR
 placeholders -verbose=true -extensions=xml,config -folders=/home/userapplication/MyApplicationRoot -consulAddress=consul.fboukezzoula.intra:8500 -consulDataCenter=mustach-project -consulEndpointEnvironment=/dev/
 ```
 
-
+# Examples of using the PlaceholdersKit in Docker ecosystem :
