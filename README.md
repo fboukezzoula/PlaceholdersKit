@@ -45,10 +45,15 @@ _**-consulEndpointEnvironment**_ :<br />
 The URI root path of our Consul KV store to extract all the KV Pairs. <br />
 _(default "/dev/")_
 
+The PlaceholdersKit tool use the Consul Hashicorp api package. If you need more arguments for accessing to your Consul infrastructure, you can easily define the standard environment variables (_CONSUL_HTTP_ADDR, CONSUL_HTTP_TOKEN, CONSUL_HTTP_AUTH, CONSUL_HTTP_SSL, CONSUL_CACERT_, etc ...) for creating a new consul client by calling NewClient function with a Config object as argument. We create easily this Config object by calling the DefaultConfig function and change attribues like Address, Scheme, Datacenter, etc ...   
+
+In most of the cases, our 3 arguments (_**consulAddress, consulDataCenter, consulEndpointEnvironment**_) will be ample enough. 
+
+The full documentation is available on [Godoc](https://godoc.org/github.com/hashicorp/consul/api)
+
 <p align="center">
   <img src="ressources/arguments_cmd_line.png" width="1028"/>
   <img src="ressources/consul.png" width="1028"/>
- 
 </p>
 
 # Examples of using the PlaceholdersKit command line :
