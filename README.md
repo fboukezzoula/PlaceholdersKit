@@ -4,7 +4,7 @@ Placeholder text until I can flesh this out more. I'll throw the source up on he
 
 This program is useful for a Docker multi-environment deployment scenarios (such as INT, DEV, UAT, PRE-PROD, PROD environments, etc ...). Of course, it can be use for another type of multi-environment deployment scenarios : Cloud On-Promise, CSP, etc ..
 
-# Goals and why this tool is useful :
+# Goals and why this tool is really useful :
 
 * We have exactly the same docker image (same tag) : with the same binaries, application files and configurations files (with all the placeholders). All these files are already on the target(s) folder(s) of the docker application.
 
