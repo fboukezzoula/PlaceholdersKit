@@ -27,11 +27,11 @@ _(default "false")_
 
 _**-extensions**_ :<br />
 All desire extension files to scan for placeholders ...:<br />
-
+_(default "xml,properties,config,txt")_
 
 _**-folders**_ :<br />
 All folders root to scan the define extensions files for placeholders (deep search in all tree folders/recursivity) ...:<br />
-
+_(default "c:/MyApplicationRoot")_
 
 _**-consulAddress**_ :<br />
 Consul Server Address to search all KV Pairs for feeding our placeholders files in a streaming live process ...:<br />
