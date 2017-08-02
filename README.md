@@ -51,5 +51,18 @@ _(default "/dev/")_
  
 </p>
 
+# Examples of using the PlaceholdersKit command line :
+
+* On Windows (cmd) :
+
+```
+placeholders.exe -verbose=true -extensions=xml,config -folders=c:/MyApplicationRoot -consulAddress=consul.fboukezzoula.intra:8500 -consulDataCenter=mustach-project -consulEndpointEnvironment=/dev/
+```
+
+* On Linux (shell) :
+
+```
+placeholders -verbose=true -extensions=xml,config -folders=/home/userapplication/MyApplicationRoot -consulAddress=consul.fboukezzoula.intra:8500 -consulDataCenter=mustach-project -consulEndpointEnvironment=/dev/
+```
 
 
