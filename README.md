@@ -64,7 +64,7 @@ Concerning the argument _**-PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT**_, you 
 
 # Examples of using the PlaceholdersKit command line :
 
-* On Windows (cmd) :
+* On Windows (cmd) with all the arguments :
 
 ```
 placeholders.exe -verbose=true -PLACEHOLDERSKIT_EXTENSIONS=xml,config -PLACEHOLDERSKIT_FOLDERS=c:/MyApplicationRoot ^
@@ -72,7 +72,7 @@ placeholders.exe -verbose=true -PLACEHOLDERSKIT_EXTENSIONS=xml,config -PLACEHOLD
 -PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT=/COMMON,/DEV
 ```
 
-* On Linux (shell) :
+* On Linux (shell) with all the arguments :
 
 ```
 placeholders -verbose=true -PLACEHOLDERSKIT_EXTENSIONS=xml,config -PLACEHOLDERSKIT_FOLDERS=/home/MyApplicationRoot \
@@ -80,4 +80,4 @@ placeholders -verbose=true -PLACEHOLDERSKIT_EXTENSIONS=xml,config -PLACEHOLDERSK
 -PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT=/COMMON,/DEV
 ```
 
-# Examples of using the PlaceholdersKit in a Docker ecosystem :
+# How to use the PlaceholdersKit in a Docker ecosystem ?
