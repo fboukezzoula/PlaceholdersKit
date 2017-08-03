@@ -62,21 +62,22 @@ Concerning the argument _**-consulEndpointEnvironment**_, you can use only one o
   <img src="ressources/consul.png" width="1028"/>
 </p>
 
-
-
-
 # Examples of using the PlaceholdersKit command line :
 
 * On Windows (cmd) :
 
 ```
-placeholders.exe -verbose=true -extensions=xml,config -folders=c:/MyApplicationRoot -consulAddress=consul.fboukezzoula.intra:8500 -consulDataCenter=mustach-project -consulEndpointEnvironment=/common,/dev
+placeholders.exe -verbose=true -PLACEHOLDERSKIT_EXTENSIONS=xml,config -PLACEHOLDERSKIT_FOLDERS=c:/MyApplicationRoot ^
+-PLACEHOLDERSKIT_CONSUL-ADDRESS=consul.fboukezzoula.intra:8500 -PLACEHOLDERSKIT_CONSUL-DATACENTER=mustach-project ^
+-PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT=/COMMON,/DEV
 ```
 
 * On Linux (shell) :
 
 ```
-placeholders -verbose=true -extensions=xml,config -folders=/home/userapplication/MyApplicationRoot -consulAddress=consul.fboukezzoula.intra:8500 -consulDataCenter=mustach-project -consulEndpointEnvironment=/common,/dev
+placeholders -verbose=true -PLACEHOLDERSKIT_EXTENSIONS=xml,config -PLACEHOLDERSKIT_FOLDERS=/home/MyApplicationRoot \
+-PLACEHOLDERSKIT_CONSUL-ADDRESS=consul.fboukezzoula.intra:8500 -PLACEHOLDERSKIT_CONSUL-DATACENTER=mustach-project \
+-PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT=/COMMON,/DEV
 ```
 
-# Examples of using the PlaceholdersKit in Docker ecosystem :
+# Examples of using the PlaceholdersKit in a Docker ecosystem :
