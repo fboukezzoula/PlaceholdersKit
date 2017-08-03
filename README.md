@@ -29,29 +29,29 @@ _**-verbose**_ :<br />
 More output logs. List all the Key placeholders scan in all the fullpath files with the desire extensions. <br />
 _(default "false")_
 
-_**-extensions**_ :<br />
+_**-PLACEHOLDERSKIT_EXTENSIONS**_ :<br />
 All desire extension files to be scan deeper for searching placeholders. <br />
-_(default "xml,properties,config,txt")_
+_(example : "xml,properties,config,txt")_
 
-_**-folders**_ :<br />
+_**-PLACEHOLDERSKIT_FOLDERS**_ :<br />
 All folders root to scan the define extensions files for searching placeholders (deep search in all tree folders/recursivity per default). <br />
-_(default "c:/MyApplicationRoot")_
+_(example : "c:/MyApplicationRoot")_
 
-_**-consulAddress**_ :<br />
+_**-PLACEHOLDERSKIT_CONSUL-ADDRESS**_ :<br />
 Consul Server Address to search all KV Pairs for feeding our placeholders files in a "on fly/streaming live" process. <br />
-_(default "consul.fboukezzoula.intra:8500")_
+_(example : "consul.fboukezzoula.intra:8500")_
 
-_**-consulDataCenter**_ :<br />
+_**-PLACEHOLDERSKIT_CONSUL-DATACENTER**_ :<br />
 Use this specific Datacenter label. This property can be blank if you haven't set your Datacenter on Consul. <br />
-_(default "mustach-project")_
+_(example : "mustach-project")_
 
-_**-consulEndpointEnvironment**_ :<br />
+_**-PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT**_ :<br />
 The URI root path of our Consul KV store to extract all the KV Pairs. <br />
-_(default "/common/,/dev/")_
+_(example : "/common/,/dev/")_
 
 The PlaceholdersKit tool use the Consul Hashicorp api package. If you need more arguments for accessing to your Consul infrastructure, you can easily define the standard environment variables (_CONSUL_HTTP_ADDR, CONSUL_HTTP_TOKEN, CONSUL_HTTP_AUTH, CONSUL_HTTP_SSL, CONSUL_CACERT_, etc ...) for creating a new consul client by calling NewClient function with a Config object as argument. We create easily this Config object by calling the DefaultConfig function and change attribues like Address, Scheme, Datacenter, etc ...   
 
-In most of the cases, our 3 arguments (_**consulAddress, consulDataCenter, consulEndpointEnvironment**_) will be ample enough. 
+In most of the cases, our 3 arguments (_**PLACEHOLDERSKIT_CONSUL-ADDRESS, PLACEHOLDERSKIT_CONSUL-DATACENTER, PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT**_) will be ample enough. 
 
 The full documentation is available on [Godoc](https://godoc.org/github.com/hashicorp/consul/api)
 
