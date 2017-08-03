@@ -55,7 +55,7 @@ In most of the cases, our 3 arguments (_**PLACEHOLDERSKIT_CONSUL-ADDRESS, PLACEH
 
 The full documentation is available on [Godoc](https://godoc.org/github.com/hashicorp/consul/api)
 
-Concerning the argument _**-consulEndpointEnvironment**_, you can use only one or several endpoints. Usually, we will have the same **common KV pairs** for all environement like the root folder path for hosting your application, the root folder and name files for the  logging process, inforamtion about AD domains names, same SMTP Relay server for sending mails, same network devices etc ... As these KV are the same for all environements, we can create on Consul Server one endpoint called for example **common** that will host all these KV information and will be use for all our deployments.
+Concerning the argument _**-PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT**_, you can use only one or several endpoints. Usually, we will have the same **common KV pairs** for all environement like the root folder path for hosting your application, the root folder and name files for the  logging process, inforamtion about AD domains names, same SMTP Relay server for sending mails, same network devices etc ... As these KV are the same for all environements, we can create on Consul Server one endpoint called for example **common** that will host all these KV information and will be use for all our deployments.
 
 <p align="center">
   <img src="ressources/arguments_command_line.png" width="1028"/>
