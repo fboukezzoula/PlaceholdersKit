@@ -147,4 +147,4 @@ CMD ["placeholders"]
 ENTRYPOINT ["dotnet", "aspnetapp.dll"]
 ```
 
-(placeholders is in the PATH)
+(in this example, the placeholders binary is in the PATH)
