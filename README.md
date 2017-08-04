@@ -16,7 +16,7 @@ This program is useful for a Docker multi-environment deployment scenarios (such
 
 * At deployment time, the placeholders will be resolved from dictionaries (taken from a Consul KV store) that are assigned to the target environment. During the deployment, that can be assimilated as a "run" goal for Docker ecosystem (docker stack deploy, docker-compose up, docker run ... ), the PlaceholdersKit tool will replace all the placeholders, all the key names which are delimeter by {{...}} per default with their own values (KV Pairs). These replacements in all your configuration files (you have only to define the extension files for beeing scan and finding in their content all the placeholders such as config, properties, xml files ...) will be done with the correct value _**depend on the target deployment environment**_. 
 
-* These environment values are taken from a Consul KV store during the deployment ("on the fly/live streaming"). The primary use case for this PlaceholdersKit tool is to be able to build native Consul-based configuration into your Docker image without needing glue such as environement variables, use tempories files, multiple sed commands, copy/move files, etc ...
+* These environment values are taken from a Consul KV store during the deployment ("on the fly/live streaming"). The primary use case for this PlaceholdersKit tool is to be able to build native Consul-based configuration into your Docker image without needing glue such as environement variables then use multiple sed commands to modify the files, can use tempories files or copy/move files, etc ...
 
 # What are the command line arguments for this PlaceholdersKit tool ?
 
@@ -81,3 +81,55 @@ placeholders -verbose=true -PLACEHOLDERSKIT_EXTENSIONS=xml,config -PLACEHOLDERSK
 ```
 
 # How to use the PlaceholdersKit in a Docker ecosystem ?
+
+All the parameters define before can be pass as command line arguments for this PlaceholdersKit tool. **But we can use the same parameter name as environement variable** or can combine them ! So, we can define these kind of environment variables during the deploy like this example :
+
+```
+docker run -itd -e PLACEHOLDERSKIT_EXTENSIONS=xml,config -e PLACEHOLDERSKIT_FOLDERS=/home/MyApplicationRoot my-docker-application-image:tag
+```
+
+or describe these variables in your **docker-image.yml** file (docker-compose up, docker stack deploy ....) like this :
+
+```
+version: "3.1"
+
+services:
+  myapplication:
+    image: my-docker-application-image:tag
+
+    ports:
+        - 80 : 5000
+
+    environment:
+        - PLACEHOLDERSKIT_EXTENSIONS=xml,config,properties
+        - PLACEHOLDERSKIT_FOLDERS=/home/MyApplicationRoot,/home/MyAnotherApplicationRoot
+        - PLACEHOLDERSKIT_CONSUL-ADDRESS=consul.fboukezzoula.intra:8500
+        - PLACEHOLDERSKIT_CONSUL-DATACENTER=mustach-project
+        - PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT=/COMMON,/DEV
+
+    networks:
+        - my-overlay
+      
+    deploy:
+      
+      mode: replicated
+      replicas: 1
+                
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+      
+      update_config:
+        parallelism: 1
+        delay: 10s
+        failure_action: continue
+        monitor: 60s
+        max_failure_ratio: 0.3
+
+networks:
+  my-overlay:
+    external: true
+```
+
