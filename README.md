@@ -138,7 +138,9 @@ On your Dockerfile use for building your my-docker-application-image:tag, you sh
 Example in the bottom of your Dockerfile :
 
 ```
-CMD ["placeholders.exe"]
+CMD ["placeholders"]
 	
 ENTRYPOINT ["dotnet", "aspnetapp.dll"]
 ```
+
+(placeholders is in the PATH)
