@@ -135,6 +135,8 @@ networks:
 
 On your Dockerfile use for building your my-docker-application-image:tag, you should only add a [CMD] Docker command for updating all extensions files according your parameters before your [ENTRYPOINT] need to run your application when the container start. Also, if you have a script (sh for example) on your [ENTRYPOINT], you can add only the call for executing the placeholder binary.
 
+Example in the bottom of your Dockerfile :
+
 ```
 CMD ["placeholders.exe"]
 	
