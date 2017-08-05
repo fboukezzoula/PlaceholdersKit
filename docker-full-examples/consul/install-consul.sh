@@ -32,8 +32,8 @@ apt-get update -qq
 apt-get install -y unzip
 
 # Install everything
-unzip -o 0.5.0_linux_amd64.zip
-unzip -o 0.5.0_web_ui.zip
+unzip -o consul_0.9.0_linux_amd64.zip
+unzip -o 0.9.0_web_ui.zip
 stop consul || true
 cp consul /usr/local/bin/consul
 mkdir -p /opt/consul-ui
