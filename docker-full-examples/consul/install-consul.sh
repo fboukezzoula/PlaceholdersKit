@@ -37,7 +37,7 @@ unzip -o 0.9.0_web_ui.zip
 stop consul || true
 cp consul /usr/local/bin/consul
 mkdir -p /opt/consul-ui
-cp -R dist/* /opt/consul-ui
+cp -R web_ui/* /opt/consul-ui
 mkdir -p /etc/consul
 mkdir -p /var/lib/consul
 cp consul.json /etc/consul/consul.json
