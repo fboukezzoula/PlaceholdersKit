@@ -85,7 +85,7 @@ placeholders -verbose=true -PLACEHOLDERSKIT_EXTENSIONS=xml,config -PLACEHOLDERSK
 All the parameters define before can be pass as command line arguments for this PlaceholdersKit tool. **But we can use the same parameter name as environement variable** or can combine them ! So, we can define these kind of environment variables during the deploy like this example :
 
 ```
-docker run -itd -e PLACEHOLDERSKIT_EXTENSIONS=xml,config -e PLACEHOLDERSKIT_FOLDERS=/home/MyApplicationRoot my-docker-application-image:tag
+docker run -itd -e PLACEHOLDERSKIT_EXTENSIONS=xml,config -e PLACEHOLDERSKIT_FOLDERS=/home/MyApplicationRoot ... my-docker-application-image:tag
 ```
 
 or describe these variables in your **docker-image.yml** file (docker-compose up, docker stack deploy ....) like this :
@@ -133,18 +133,21 @@ networks:
     external: true
 ```
 
-On your Dockerfile use for building your my-docker-application-image:tag, you should only add a [CMD] Docker command for updating all your placeholders in all your extensions files according your parameters before your [ENTRYPOINT] need to run your application when the container start. Also, if you have a script (sh for example) on your [ENTRYPOINT], you can add only the call for executing the placeholder binary before your process. **THAT'S ALL !!**
+On your Dockerfile use for building your my-docker-application-image:tag, you should only add a [RUN] Docker command for updating all your placeholders in all your extensions files according your parameters before your [ENTRYPOINT] need to run your application when the container start. Also, if you have a script (sh for example) on your [ENTRYPOINT], you can add only the call for executing the placeholder binary before your process. **THAT'S ALL !!**
 
 * Example in the bottom of a Dockerfile :
 
 ```
-...
+COPY placeholders /usr/local/bin/placeholders
+RUN chmod+x /usr/local/bin/placeholders
 ...
 ...
 
-CMD ["placeholders"]
+RUN placeholders
 	
 ENTRYPOINT ["dotnet", "aspnetapp.dll"]
 ```
 
-(in this example, the placeholders binary is in the PATH)
+In this example, the placeholders binary was copied directly in the /usr/local/bin folder to be in the PATH.
+
+
