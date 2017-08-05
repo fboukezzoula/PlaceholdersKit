@@ -133,7 +133,7 @@ networks:
     external: true
 ```
 
-On your Dockerfile use for building your my-docker-application-image:tag (in this example), you should only add a [RUN] Docker command for updating all your placeholders in all your extensions files according your parameters before your [ENTRYPOINT] need to run your application when the container start. Also, if you have a script (sh for example) on your [ENTRYPOINT], you can add only the call for executing the placeholder binary before starting your docker application. **THAT'S ALL !!**
+In this example, your Dockerfile use for building your _**my-docker-application-image:tag**_ should have only a [RUN] Docker command for updating all your placeholders in all your extensions files according your parameters before your [ENTRYPOINT] need to run your application when the container start. Also, if you have a script (sh for example) on your [ENTRYPOINT], you can add only the call for executing the placeholder binary before starting your docker application. **THAT'S ALL !!**
 
 * Example in the bottom of a Dockerfile :
 
