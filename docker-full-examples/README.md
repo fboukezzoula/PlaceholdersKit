@@ -12,7 +12,7 @@ Then we will deploy the dotnet application (as a stack application Docker) in **
 
 
 <p align="center">
-  <img src="ressources/consul_01.png">
+  <img src="../ressources/consul_01.png">
 </p>
 
 
