@@ -52,6 +52,32 @@ Below, **all the keys names and keys values** you should create on each node (CO
 | `ENV` | PRODUCTION |
 | `MyKey1` | I am the Value Of MyKey1 in PRODUCTION ... so IT'S WORKING !!!! |
 
+```
+FROM microsoft/aspnetcore-build:1.1 AS build-env
+WORKDIR /app
+
+# copy csproj and restore as distinct layers
+COPY *.csproj ./
+RUN dotnet restore
+
+# copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o out
+
+COPY /placeholders/placeholders.sh out
+
+# build runtime image
+FROM microsoft/aspnetcore:1.1
+WORKDIR /app
+
+COPY /placeholders/placeholders /usr/local/bin/placeholders
+
+COPY --from=build-env /app/out .
+
+RUN chmod +x /usr/local/bin/placeholders && chmod +x /app/placeholders.sh
+
+ENTRYPOINT ["/app/placeholders.sh"]
+```
 
 * First DEPLOYMENT : we don't point to a correct endpoint on KV Consul store so we won't replace the placeholders. You should have something like this when you browse the MVC dotnet application :
 
