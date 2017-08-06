@@ -109,7 +109,7 @@ The application dotnet is locate on **/app** folder (look at the Dockerfile !). 
 ```    
 We have another placeholders in the root folder _**folders-for-placeholders-demonstration**_. For example, the file in _folders-for-placeholders-demonstration/folder1/web.config_ have these placeholders : **{{DataServerName}} {{ENV}}**
 
-# Docker stack deploy :
+# Docker stack deploy and check all our placeholders :
 
 * First DEPLOYMENT : we won't point to a correct endpoint on our KV Consul Store server so we won't replace the placeholders with their correct values. To do that, only comment or change the line 17 of the **docker-compose.yml** line like this :
 
@@ -122,11 +122,10 @@ Now you deploy your stack application by executing this command :
 
 You should have something like this when you browse the MVC dotnet application :
 
-docker stack deploy --compose-file docker-compose.yml placeholders
-
 <img src="../ressources/homepage_vierge.png">
 
 As you can notice in the bottom of the homepage, we can see all **our placeholders define in this file /Views/Shared/_Layout.cshtml**. 
+If you enter inside your container (docker exec -it CONTAINERID bash), you will see that the file _folders-for-placeholders-demonstration/folder1/web.config_ have always these placeholders : **{{DataServerName}} {{ENV}}** without their Key Values.
 
 
   <img src="../ressources/homepage_dev.png">
