@@ -156,4 +156,6 @@ CMD ["placeholders","-verbose=true"]
 
 In this example, the placeholders binary was copied directly in the /usr/local/bin folder to be in the PATH.
 
+If you plan to use both [ENTRYPOINT] and [CMD] Docker commands in your Dockerfile, be careful to in their association. 
+
 
