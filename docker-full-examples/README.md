@@ -52,7 +52,7 @@ Below, **all the keys names and keys values** you should create on each node (CO
 | `ENV` | PRODUCTION |
 | `MyKey1` | I am the Value Of MyKey1 in PRODUCTION ... so IT'S WORKING !!!! |
 
-# Multi-stage build Docker 
+# Multi-stage build Docker :
 
 Execute these below commands for building our aspnet docker image :
 
@@ -92,7 +92,7 @@ ENTRYPOINT ["/app/placeholders.sh"]
 ```
 Now we will use this same **docker image (aspnetapp) for all the environment deployments**. 
 
-The application dotnet is locate on /app folder. We have place severals placeholders in this application. In the homepage, in the file _**/Views/Shared/_Layout.cshtml**_, we have define these placeholders : {{ENV}}, {{MyKey1}} and {{MyCommonKey1}} like this (lines 40 to 50) 
+The application dotnet is locate on **/app** folder (look at the Dockerfile !). We have place severals placeholders in this application. In the homepage, in the file _**/Views/Shared/_Layout.cshtml**_, we have define these placeholders : {{ENV}}, {{MyKey1}} and {{MyCommonKey1}} like this (lines 40 to 50) 
 
 ```
 <div class="container body-content">
@@ -107,6 +107,9 @@ The application dotnet is locate on /app folder. We have place severals placehol
     </footer>
 </div>
 ```    
+We have another placeholders in the root folder _**folders-for-placeholders-demonstration**_. For example, the file in _folders-for-placeholders-demonstration/folder1/web.config_ have these placeholders : **{{DataServerName}} {{ENV}}**
+
+
 
 * First DEPLOYMENT : we don't point to a correct endpoint on KV Consul store so we won't replace the placeholders. You should have something like this when you browse the MVC dotnet application :
 
