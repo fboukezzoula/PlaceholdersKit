@@ -10,7 +10,7 @@ services:
       - 5000:5000
 
     environment:      
-      - PLACEHOLDERSKIT_EXTENSIONS=xml,properties,config,cshtml
+      - PLACEHOLDERSKIT_EXTENSIONS=config,cshtml
       - PLACEHOLDERSKIT_FOLDERS=/app
       - PLACEHOLDERSKIT_CONSUL-ADDRESS=172.17.0.1:8500
       - PLACEHOLDERSKIT_CONSUL-DATACENTER=mustach-project
