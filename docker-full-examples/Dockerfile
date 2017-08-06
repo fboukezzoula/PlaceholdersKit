@@ -23,3 +23,4 @@ COPY --from=build-env /app/out .
 RUN chmod +x /usr/local/bin/placeholders && chmod +x /app/placeholders.sh
 
 ENTRYPOINT ["/app/placeholders.sh"]
+

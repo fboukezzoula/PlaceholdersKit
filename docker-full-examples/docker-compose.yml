@@ -41,6 +41,6 @@ services:
 
 networks:
   placeholders-overlay:
-    external: true
-
+    driver: overlay
+   
 
