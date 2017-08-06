@@ -18,22 +18,23 @@ MyApplication/
     DEV/
     PROD/
 ```
-You should have this :
+You should have something like this :
 
 <img src="../ressources/consul_01.png">
 
-Below, all the keys names and keys values you should create on each node (COMMON, DEV and PROD) :
+Below, **all the keys names and keys values** you should create on each node (COMMON, DEV and PROD) :
 
+* COMMON :
 
-  <img src="../ressources/consul_common.png">
+<img src="../ressources/consul_common.png">
 
 | KeyName | KeyValue |
 | --- | --- |
 | `MyCommonKey1` | I am the Value of MyCommonKey1 in COMMON endpoint so IT'S WORKING !!! |
 
+* DEV
 
-
-  <img src="../ressources/consul_dev.png">
+<img src="../ressources/consul_dev.png">
   
   | KeyName | KeyValue |
 | --- | --- |
@@ -41,15 +42,17 @@ Below, all the keys names and keys values you should create on each node (COMMON
 | `ENV` | INTEGRATION-DEV |
 | `MyKey1` | I am the Value Of MyKey1 in INTEGRATION-DEV ... so IT'S WORKING !!!! |
 
+* PROD
 
-
-  <img src="../ressources/consul_prod.png">
+<img src="../ressources/consul_prod.png">
 
 | KeyName | KeyValue |
 | --- | --- |
 | `DataServerName` | DBSERVERPROD01 |
 | `ENV` | PRODUCTION |
 | `MyKey1` | I am the Value Of MyKey1 in PRODUCTION ... so IT'S WORKING !!!! |
+
+
 
 
   <img src="../ressources/homepage_vierge.png">
