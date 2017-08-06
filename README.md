@@ -156,7 +156,7 @@ CMD ["placeholders","-verbose=true"]
 
 In this example, the placeholders binary was copied directly in the /usr/local/bin folder to be automatically in the PATH.
 
-If you plan to use both [ENTRYPOINT] and [CMD] Docker commands in your Dockerfile, be vigilant about their joint use. I recommend the article of John Zaccone, a Docker Captain, which explain this main topic at http://www.johnzaccone.io/entrypoint-vs-cmd-back-to-basics/
+If you plan to use both [ENTRYPOINT] and [CMD] Docker commands in your Dockerfile, be vigilant about their joint use. I recommend the article of John Zaccone, a Docker Captain, which explains perfectly this main topic at this address : http://www.johnzaccone.io/entrypoint-vs-cmd-back-to-basics/
 
 In the full example (**folder: docker-full-examples**) we will take the approach of the [ENTRYPOINT] choice only, because it will be in most of our cases and these are the best practices.
 
