@@ -11,37 +11,45 @@ Then we will deploy the dotnet application (as a stack application Docker) in **
 
 
 
-<p align="center">
+
   <img src="../ressources/consul_01.png">
-</p>
 
 
-<p align="center">
+
+
+| KeyName | KeyValue |
+| --- | --- |
+| `DataServerName` | DBSERVERDEV01 |
+| `ENV` | INTEGRATION-DEV |
+| `MyKey1` | I am the Value Of MyKey1 in INTEGRATION-DEV ... so IT'S WORKING !!!! |
+
+
+
+
   <img src="../ressources/consul_common.png">
-</p>
 
 
-<p align="center">
+
+
   <img src="../ressources/consul_dev.png">
-</p>
 
-<p align="center">
+
+
   <img src="../ressources/consul_prod.png">
-</p>
 
 
-<p align="center">
+
+
   <img src="../ressources/homepage_vierge.png">
-</p>
 
 
 
-<p align="center">
+
   <img src="../ressources/homepage_dev.png">
-</p>
 
 
-<p align="center">
+
+
   <img src="../ressources/homepage_prod.png">
-</p>
+
 
