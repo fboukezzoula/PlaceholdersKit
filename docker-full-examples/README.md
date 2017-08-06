@@ -8,16 +8,21 @@ We will use the **new feature multi-stage building of Docker** by first building
 
 Then we will deploy the dotnet application (as a stack application Docker) in **INTEGRATION-DEV** environment by using all the Key Names taken in an external KV Consul Store, from the INTEGRATION-DEV endpoint. Then, after changing the environement as **PRODUCTION** by pointing to PRODUCTION endpoint, we will upadte the Docker service/stack application by re-deploying the same stack. 
 
+# What do you need for executing this full example ?
 
+You need to use a [KV Consul Store from Hashicorp](https://www.hashicorp.com/blog/consul-announcement/) and create this tree from the root path /kv  (tab **KEY/VALUE**) :
 
+```
+MyApplication/
+    COMMON/
+    DEV/
+    PROD/
+```
+You should have this :
 
+<img src="../ressources/consul_01.png">
 
-  <img src="../ressources/consul_01.png">
-
-
-
-
-
+Below, all the keys names and keys values you should create on each node (COMMON, DEV and PROD) :
 
 
   <img src="../ressources/consul_common.png">
