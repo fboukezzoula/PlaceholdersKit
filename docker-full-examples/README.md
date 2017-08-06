@@ -24,7 +24,7 @@ You should have something like this :
 
 Below, **all the keys names and keys values** you should create on each node (COMMON, DEV and PROD) :
 
-* COMMON :
+* **COMMON** :
 
 <img src="../ressources/consul_common.png">
 
@@ -32,7 +32,7 @@ Below, **all the keys names and keys values** you should create on each node (CO
 | --- | --- |
 | `MyCommonKey1` | I am the Value of MyCommonKey1 in COMMON endpoint so IT'S WORKING !!! |
 
-* DEV :
+* **DEV** :
 
 <img src="../ressources/consul_dev.png">
   
@@ -42,7 +42,7 @@ Below, **all the keys names and keys values** you should create on each node (CO
 | `ENV` | INTEGRATION-DEV |
 | `MyKey1` | I am the Value Of MyKey1 in INTEGRATION-DEV ... so IT'S WORKING !!!! |
 
-* PROD :
+* **PROD** :
 
 <img src="../ressources/consul_prod.png">
 
