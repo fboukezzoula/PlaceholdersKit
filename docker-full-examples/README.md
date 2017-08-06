@@ -8,3 +8,13 @@ We will use the **new feature multi-stage building of Docker** by first building
 
 Then we will deploy the dotnet application (as a stack application Docker) in **INTEGRATION-DEV** environment by using all the Key Names taken in an external KV Consul Store, from the INTEGRATION-DEV endpoint. Then, after changing the environement as **PRODUCTION** by pointing to PRODUCTION endpoint, we will upadte the Docker service/stack application by re-deploying the same stack. 
 
+
+
+
+<p align="center">
+  <img src="ressources/consul_01.png">
+</p>
+
+
+
+
