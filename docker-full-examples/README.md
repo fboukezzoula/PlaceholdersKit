@@ -22,6 +22,9 @@ Then we will deploy the dotnet application (as a stack application Docker) in **
 
   <img src="../ressources/consul_common.png">
 
+| KeyName | KeyValue |
+| --- | --- |
+| `MyCommonKey1` | I am the Value of MyCommonKey1 in COMMON endpoint so IT'S WORKING !!! |
 
 
 
