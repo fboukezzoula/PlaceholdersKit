@@ -109,9 +109,18 @@ The application dotnet is locate on **/app** folder (look at the Dockerfile !). 
 ```    
 We have another placeholders in the root folder _**folders-for-placeholders-demonstration**_. For example, the file in _folders-for-placeholders-demonstration/folder1/web.config_ have these placeholders : **{{DataServerName}} {{ENV}}**
 
+# Docker stack deploy :
 
+* First DEPLOYMENT : we won't point to a correct endpoint on our KV Consul Store server so we won't replace the placeholders with their correct values. To do that, only comment or change the line 17 of the **docker-compose.yml** line like this :
 
-* First DEPLOYMENT : we don't point to a correct endpoint on KV Consul store so we won't replace the placeholders. You should have something like this when you browse the MVC dotnet application :
+``` 
+- PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT=/OM
+``` 
+Now you deploy your stack application by executing this command :
+
+* **docker stack deploy --compose-file docker-compose.yml placeholders**
+
+You should have something like this when you browse the MVC dotnet application :
 
 docker stack deploy --compose-file docker-compose.yml placeholders
 
