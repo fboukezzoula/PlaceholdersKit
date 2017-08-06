@@ -53,9 +53,9 @@ Below, **all the keys names and keys values** you should create on each node (CO
 | `MyKey1` | I am the Value Of MyKey1 in PRODUCTION ... so IT'S WORKING !!!! |
 
 
+* First DEPLOYMENT : we don't point to a correct endpoint on KV Consul store so we won't replace the placeholders. You should have something like this when you browse the MVC dotnet application :
 
-
-  <img src="../ressources/homepage_vierge.png">
+<img src="../ressources/homepage_vierge.png">
 
 
 
