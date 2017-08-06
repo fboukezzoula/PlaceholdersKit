@@ -24,6 +24,12 @@ Then we will deploy the dotnet application (as a stack application Docker) in **
 | `MyKey1` | I am the Value Of MyKey1 in INTEGRATION-DEV ... so IT'S WORKING !!!! |
 
 
+| KeyName | KeyValue |
+| --- | --- |
+| `DataServerName` | DBSERVERPROD01 |
+| `ENV` | PRODUCTION |
+| `MyKey1` | I am the Value Of MyKey1 in PRODUCTION ... so IT'S WORKING !!!! |
+
 
 
   <img src="../ressources/consul_common.png">
