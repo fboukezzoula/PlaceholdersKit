@@ -6,11 +6,11 @@ We will use the Microsoft's template MVC dotnet application for this full exampl
 
 We will use the **new feature multi-stage building of Docker** by first building the dotnet solution (dotnet restore and dotnet publish goals) before creating our target docker image with only the fruits of this building (dotnet run goal). This docker application image will be always the same for all our deployments, **we will be in an environment-independent and thus reusable**. 
 
-Then we will deploy the dotnet application (as a stack application Docker) in **INTEGRATION-DEV** environment by using all the Key Names taken in **an external KV Consul Store**, from the INTEGRATION-DEV endpoint. Then, after changing the environement as **PRODUCTION** by pointing to PRODUCTION endpoint, we will upadte the Docker service/stack application by re-deploying the same stack. 
+Then we will deploy the dotnet application (as a stack application Docker) in **INTEGRATION-DEV** environment by using all the Key Names taken in **an external KV Consul Store**, from the INTEGRATION-DEV endpoint. Then, after changing the environement as **PRODUCTION** by pointing to PRODUCTION endpoint, we will update the Docker service/stack application by re-deploying the same stack. We will validate that the placeholders have been correctly updated with the values of PRODUCTION environment with the same docker image.
 
-# What do you need for executing this full example ?
+# What do you need for executing this full example ? Only your external KV Consul store ...
 
-You need to use a [KV Consul Store from Hashicorp](https://www.hashicorp.com/blog/consul-announcement/) and create this tree from the root path /kv  (tab **KEY/VALUE**) :
+For this example, you need to use a [KV Consul Store from Hashicorp](https://www.hashicorp.com/blog/consul-announcement/) and create this tree from the root path /kv  (tab **KEY/VALUE**) :
 
 ```
 MyApplication/
@@ -54,7 +54,7 @@ Below, **all the keys names and keys values** you should create on each node (CO
 
 # Multi-stage build Docker :
 
-Execute these below commands for building our aspnet docker image :
+Execute these below commands for building our aspnet docker image that will be use for all environement (keep in mind: **be in an environment-independent and thus reusable**) :
 
 ```
 git clone https://github.com/fboukezzoula/PlaceholdersKit.git
