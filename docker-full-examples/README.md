@@ -52,6 +52,18 @@ Below, **all the keys names and keys values** you should create on each node (CO
 | `ENV` | PRODUCTION |
 | `MyKey1` | I am the Value Of MyKey1 in PRODUCTION ... so IT'S WORKING !!!! |
 
+# Multi-stage build Docker 
+
+Execute these below commands for building our aspnet docker image :
+
+```
+git clone https://github.com/fboukezzoula/PlaceholdersKit.git
+cd docker-full-examples
+docker build -t aspnetapp .
+```
+
+We are using this Dockerfile (notice the multi-stage build) :
+
 ```
 FROM microsoft/aspnetcore-build:1.1 AS build-env
 WORKDIR /app
@@ -78,61 +90,31 @@ RUN chmod +x /usr/local/bin/placeholders && chmod +x /app/placeholders.sh
 
 ENTRYPOINT ["/app/placeholders.sh"]
 ```
+Now we will use this same **docker image (aspnetapp) for all the environment deployments**. 
 
+The application dotnet is locate on /app folder. We have place severals placeholders in this application. In the homepage, in the file _**/Views/Shared/_Layout.cshtml**_, we have define these placeholders : {{ENV}}, {{MyKey1}} and {{MyCommonKey1}} like this (lines 40 to 50) 
 
 ```
-version: "3.1"
-
-# docker stack deploy --compose-file docker-compose.yml placeholders
-
-services:
-  dotnet:
-    image: aspnetapp
-
-    ports:
-      - 5000:5000
-
-    environment:      
-      - PLACEHOLDERSKIT_EXTENSIONS=config,cshtml
-      - PLACEHOLDERSKIT_FOLDERS=/app
-      - PLACEHOLDERSKIT_CONSUL-ADDRESS=172.17.0.1:8500
-      - PLACEHOLDERSKIT_CONSUL-DATACENTER=mustach-project
-      - PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT=/MyApplication/COMMON,/MyApplication/DEV
-
-    command: 
-      - placeholders
-      
-    networks:
-      - placeholders-overlay
-      
-    deploy:
-      mode: replicated
-      replicas: 1
-       
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 5
-        window: 120s
-      
-      update_config:
-        parallelism: 1
-        delay: 10s
-        failure_action: continue
-        monitor: 60s
-        max_failure_ratio: 0.3
-
-networks:
-  placeholders-overlay:
-    driver: overlay
-```
-
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; 2017 - dotnetcore - aspnetapp</p>
+        <p><b>PlaceholdersKit</b> - Fouzi BOUKEZZOULA - August 2017</p><p>&nbsp;</p>
+        <p>You are on <b>{{ENV}}</b> Environement !</p>
+        <p>The value of the Key Name "MyKey1" on <b>{{ENV}}</b> environment is <b>{{MyKey1}}</b></p>
+        <p>The value of the Common Key Name "MyCommonKey1" is <b>{{MyCommonKey1}}</b></p>		
+    </footer>
+</div>
+```    
 
 * First DEPLOYMENT : we don't point to a correct endpoint on KV Consul store so we won't replace the placeholders. You should have something like this when you browse the MVC dotnet application :
 
+docker stack deploy --compose-file docker-compose.yml placeholders
+
 <img src="../ressources/homepage_vierge.png">
 
-As you can notice in the bottom of the homepage, we can see all **our placeholders define in this file /Views/Shared/_Layout.cshtml**. The placeholders are : {{ENV}}, {{MyKey1}} and {{MyCommonKey1}}
+As you can notice in the bottom of the homepage, we can see all **our placeholders define in this file /Views/Shared/_Layout.cshtml**. 
 
 
   <img src="../ressources/homepage_dev.png">
