@@ -10,7 +10,6 @@ COPY . ./
 RUN dotnet publish -c Release -o out
 
 COPY /placeholders/placeholders.sh out
-RUN ls -al out
 
 # build runtime image
 FROM microsoft/aspnetcore:1.1
