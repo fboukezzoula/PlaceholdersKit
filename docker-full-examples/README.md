@@ -111,12 +111,12 @@ We have another placeholders in the root folder _**folders-for-placeholders-demo
 
 # Docker stack deploy and check all our placeholders :
 
-* First DEPLOYMENT : we won't point to a correct endpoint on our KV Consul Store server so we won't replace the placeholders with their correct values. To do that, only comment or change the line 17 of the **docker-compose.yml** line like this :
+* Only for checking, we won't point to a correct endpoint on our KV Consul Store server so we won't replace the placeholders with their correct values. To do that, only comment or change the line 17 of the **docker-compose.yml** line like this :
 
 ``` 
 - PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT=/OM
 ``` 
-Now you deploy your stack application by executing this command :
+Now you can deploy your stack application by executing this command :
 
 * **docker stack deploy --compose-file docker-compose.yml placeholders**
 
@@ -125,13 +125,16 @@ You should have something like this when you browse the MVC dotnet application :
 <img src="../ressources/homepage_vierge.png">
 
 As you can notice in the bottom of the homepage, we can see all **our placeholders define in this file /Views/Shared/_Layout.cshtml**. 
-If you enter inside your container (docker exec -it CONTAINERID bash), you will see that the file _folders-for-placeholders-demonstration/folder1/web.config_ have always these placeholders : **{{DataServerName}} {{ENV}}** without their Key Values.
+If you enter inside your container (docker exec -it CONTAINERID bash), you will see that the file _folders-for-placeholders-demonstration/folder1/web.config_ have always these placeholders : **{{DataServerName}} {{ENV}}** without their correct Key Values, as the homepage because we are targetting a false endpoint on Consul.
 
+# First Deployment : INTEGRATION-DEV environment
+
+We are ready to use the PlaceholdersKit tool ! Be sure to update the docker-compose.yml file according your Consul KV Store server @IP Address. In our case, the placeholders are define in 2 types of extension files : cshtml (homepage) and config (files in the root folder   _folders-for-placeholders-demonstration_ not need for the dotnet application but only for using the PlaceholdersKit tool).  
 
   <img src="../ressources/homepage_dev.png">
 
 
-
+# Second Deployment : Update to PRODUCTION environment
 
   <img src="../ressources/homepage_prod.png">
 
