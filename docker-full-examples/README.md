@@ -17,18 +17,6 @@ Then we will deploy the dotnet application (as a stack application Docker) in **
 
 
 
-| KeyName | KeyValue |
-| --- | --- |
-| `DataServerName` | DBSERVERDEV01 |
-| `ENV` | INTEGRATION-DEV |
-| `MyKey1` | I am the Value Of MyKey1 in INTEGRATION-DEV ... so IT'S WORKING !!!! |
-
-
-| KeyName | KeyValue |
-| --- | --- |
-| `DataServerName` | DBSERVERPROD01 |
-| `ENV` | PRODUCTION |
-| `MyKey1` | I am the Value Of MyKey1 in PRODUCTION ... so IT'S WORKING !!!! |
 
 
 
@@ -38,12 +26,22 @@ Then we will deploy the dotnet application (as a stack application Docker) in **
 
 
   <img src="../ressources/consul_dev.png">
+  
+  | KeyName | KeyValue |
+| --- | --- |
+| `DataServerName` | DBSERVERDEV01 |
+| `ENV` | INTEGRATION-DEV |
+| `MyKey1` | I am the Value Of MyKey1 in INTEGRATION-DEV ... so IT'S WORKING !!!! |
 
 
 
   <img src="../ressources/consul_prod.png">
 
-
+| KeyName | KeyValue |
+| --- | --- |
+| `DataServerName` | DBSERVERPROD01 |
+| `ENV` | PRODUCTION |
+| `MyKey1` | I am the Value Of MyKey1 in PRODUCTION ... so IT'S WORKING !!!! |
 
 
   <img src="../ressources/homepage_vierge.png">
