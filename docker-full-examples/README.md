@@ -79,6 +79,55 @@ RUN chmod +x /usr/local/bin/placeholders && chmod +x /app/placeholders.sh
 ENTRYPOINT ["/app/placeholders.sh"]
 ```
 
+
+```
+version: "3.1"
+
+# docker stack deploy --compose-file docker-compose.yml placeholders
+
+services:
+  dotnet:
+    image: aspnetapp
+
+    ports:
+      - 5000:5000
+
+    environment:      
+      - PLACEHOLDERSKIT_EXTENSIONS=config,cshtml
+      - PLACEHOLDERSKIT_FOLDERS=/app
+      - PLACEHOLDERSKIT_CONSUL-ADDRESS=172.17.0.1:8500
+      - PLACEHOLDERSKIT_CONSUL-DATACENTER=mustach-project
+      - PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT=/MyApplication/COMMON,/MyApplication/DEV
+
+    command: 
+      - placeholders
+      
+    networks:
+      - placeholders-overlay
+      
+    deploy:
+      mode: replicated
+      replicas: 1
+       
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+      
+      update_config:
+        parallelism: 1
+        delay: 10s
+        failure_action: continue
+        monitor: 60s
+        max_failure_ratio: 0.3
+
+networks:
+  placeholders-overlay:
+    driver: overlay
+```
+
+
 * First DEPLOYMENT : we don't point to a correct endpoint on KV Consul store so we won't replace the placeholders. You should have something like this when you browse the MVC dotnet application :
 
 <img src="../ressources/homepage_vierge.png">
