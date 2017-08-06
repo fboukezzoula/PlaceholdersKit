@@ -57,7 +57,7 @@ Below, **all the keys names and keys values** you should create on each node (CO
 
 <img src="../ressources/homepage_vierge.png">
 
-
+As you can notice in the bottom of the homepage, we can see all **our placeholders define in this file /Views/Shared/_Layout.cshtml**. The placeholders are : {{ENV}}, {{MyKey1}} and {{MyCommonKey1}}
 
 
   <img src="../ressources/homepage_dev.png">
