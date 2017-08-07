@@ -45,7 +45,7 @@ Consul Server Address to search all KV Pairs for feeding our placeholders files 
 _(example : "consul.fboukezzoula.intra:8500")_
 
 _**-PLACEHOLDERSKIT_CONSUL-DATACENTER**_ :<br />
-Use this specific Datacenter label. This property can be blank if you haven't set your Datacenter on Consul. <br />
+Use this specific Datacenter label. This property can be blank if you haven't set your Datacenter on Consul or if you have only one Datacenter on your Consul infrastucture. <br />
 _(example : "mustach-project")_
 
 _**-PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT**_ :<br />
