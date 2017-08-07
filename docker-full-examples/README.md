@@ -131,7 +131,7 @@ If you enter inside your container (docker exec -it CONTAINERID bash), you will 
 
 We are ready to use the PlaceholdersKit tool ! Be sure to update the docker-compose.yml file according your Consul KV Store server @IP Address. In our case, the placeholders are define in 2 types of extension files : cshtml (homepage) and config (files in the root folder   _folders-for-placeholders-demonstration_ not need for the dotnet application but only for using the PlaceholdersKit tool). 
 
-In the docker-compose.yml file, here are our arguments :
+In the docker-compose.yml file, here are the result of our arguments :
 
 ```
       - PLACEHOLDERSKIT_EXTENSIONS=config,cshtml
@@ -144,12 +144,17 @@ Execute the command :
  * **docker stack deploy --compose-file docker-compose.yml placeholders**     
 
   <img src="../ressources/homepage_dev.png">
+  
+  And voila ! The placeholders have been correctly update.
 
 # Second Deployment : Update to PRODUCTION environment
 
 Update only this line in your docker-compose.yml file :
 
    - PLACEHOLDERSKIT_CONSUL-ENDPOINT-ENVIRONMENT=/MyApplication/COMMON,/MyApplication/**PROD**
+   
+Re-execute the command for updating automatically our stack and see the result !: 
+ * **docker stack deploy --compose-file docker-compose.yml placeholders**        
 
   <img src="../ressources/homepage_prod.png">
 
