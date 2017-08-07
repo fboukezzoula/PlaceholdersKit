@@ -158,4 +158,10 @@ Re-execute the command for updating automatically our stack and see the result !
 
   <img src="../ressources/homepage_prod.png">
 
+If you enter inside your container, you will see that the file folders-for-placeholders-demonstration/folder1/web.config have been update too  : DBSERVERPROD01 PRODUCTION.
+
+
+I hope you have enjoyed.
+
+
 
