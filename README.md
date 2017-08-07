@@ -37,8 +37,8 @@ All desire extension files to be scan deeper for searching placeholders. <br />
 _(example : "xml,properties,config,txt")_
 
 _**-PLACEHOLDERSKIT_FOLDERS**_ :<br />
-All folders root to scan the define extensions files for searching placeholders (deep search in all tree folders/recursivity per default). <br />
-_(example : "c:/MyApplicationRoot")_
+All folders root to scan the define extensions files for searching placeholders (deep search in all tree folders/recursivity per default). This property can take more than one path.<br />
+_(example : "c:/MyApplicationRoot" or "/home/myapplication, /home/anotherfolder")_
 
 _**-PLACEHOLDERSKIT_CONSUL-ADDRESS**_ :<br />
 Consul Server Address to search all KV Pairs for feeding our placeholders files in a "on fly/streaming live" process. <br />
