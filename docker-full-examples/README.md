@@ -145,7 +145,7 @@ Execute the command :
 
   <img src="../ressources/homepage_dev.png">
   
-  And voila ! The placeholders have been correctly update.
+  **And voila ! The placeholders have been correctly updated with all the INTEGRATION-DEV Key values**.
 
 # Second Deployment : Update to PRODUCTION environment
 
@@ -157,6 +157,8 @@ Re-execute the command for updating automatically our stack and see the result !
  * **docker stack deploy --compose-file docker-compose.yml placeholders**        
 
   <img src="../ressources/homepage_prod.png">
+
+**And voila ! The placeholders have been correctly updated with all the PRODUCTION Key values**.
 
 If you enter inside your container, you will see that the file _folders-for-placeholders-demonstration/folder1/web.config_ have been updated too  : **DBSERVERPROD01 PRODUCTION**.
 
